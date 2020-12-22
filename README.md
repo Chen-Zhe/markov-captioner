@@ -1,5 +1,6 @@
 ## Markov Captioner
 A Markov Chain that can describe an image based on the extracted features, in this case being the object categories and its location.
+By the way, this is my code for the project of 10-701 Introduction to Machine Learning (PhD) :)
 
 ### Core Mathematics
 Select the next best word (or sequence of words when beam width is greater than 1) by maximizing the conditional probability of the word's appearance given its previous few words
