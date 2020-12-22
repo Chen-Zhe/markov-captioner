@@ -16,6 +16,14 @@ Select the next best word (or sequence of words when beam width is greater than 
 - `numpy`
 - [`sparse`](https://github.com/pydata/sparse)
 
+#### Codebase organization
+- `DataLoader.py`: helper functions to load training captions and encode object category and location information to train and test the Markov-based model
+- `gen_test_captions.py`: automation script to run a trained Markov-based model on Karparthy offline test or validation split with sentence generation parameters provided through the command line. Stores the captions in a JSON file for scoring 
+- `Heatmap.py`: borrowed script to show object-word location heatmap for a trained Markov-based model
+- `MarkovCaptioner.py`: the core encapsulated `MarkovCaptioner` module for training and testing the Markov-based model. It also defines the `BeamSearchCandidate` class for beam search during sentence generation
+- `train_markov.py`: automation script to train a Markov-based model with training parameters provided through the command line and serialize the trained model to a file on disk
+- `Utility.py`: utility functions and constants
+
 #### Parameters
 - training
   - `ngram_n`: n-gram size used to train Markov Chain
