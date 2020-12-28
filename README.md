@@ -12,11 +12,13 @@ Select the next best word (or sequence of words when beam width is greater than 
 <img src="https://render.githubusercontent.com/render/math?math==\frac{\mathbb{P}( w_{i-1}, w_{i-2}, x_1, x_2, \dots, x_n \mid w_i) \mathbb{P}(w_i)}   {\mathbb{P}( w_{i-2}, x_1, x_2, \dots, x_n \mid w_{i-1})   \mathbb{P}(w_{i-1})}">
 <img src="https://render.githubusercontent.com/render/math?math=\stackrel{\textit{Naive Bayes}}{=}    \frac{\mathbb{P}( w_{i-1}, w_{i-2} \mid w_i)    \mathbb{P}(w_i)    \prod_{j=1}^{m}\mathbb{P}(x_j \mid w_i)    }    {\mathbb{P}(w_{i-2} \mid w_{i-1})    \mathbb{P}(w_{i-1})    \prod_{j=1}^{m}\mathbb{P}(x_j \mid w_{i-1})    }">
 
-#### Dependencies
+## Codebase
+
+### Dependencies
 - `numpy`
 - [`sparse`](https://github.com/pydata/sparse)
 
-#### Codebase organization
+### File Organization
 - `DataLoader.py`: helper functions to load training captions and encode object category and location information to train and test the Markov-based model
 - `gen_test_captions.py`: automation script to run a trained Markov-based model on Karparthy offline test or validation split with sentence generation parameters provided through the command line. Stores the captions in a JSON file for scoring 
 - `Heatmap.py`: borrowed script to show object-word location heatmap for a trained Markov-based model
@@ -24,7 +26,7 @@ Select the next best word (or sequence of words when beam width is greater than 
 - `train_markov.py`: automation script to train a Markov-based model with training parameters provided through the command line and serialize the trained model to a file on disk
 - `Utility.py`: utility functions and constants
 
-#### Parameters
+### Parameters
 - training
   - `ngram_n`: n-gram size used to train Markov Chain
   - `grid_size`: object location encoding is based on a nxn grid. This controls n
@@ -33,7 +35,7 @@ Select the next best word (or sequence of words when beam width is greater than 
   - `beam_width`: beam width for beam search
   - `decay_factor`: incremental penalty for generating the same word. This helps to reduce rambling of the model.
 
-### Results
+## Results
 `ngram_n` = 4, `grid_size` = 2, `sentence_length_limit` = 16, `beam_width` = 20, `decay_factor` = 1e-2
 
 |COCO ID|Image|Caption|
