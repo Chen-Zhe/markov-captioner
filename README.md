@@ -1,7 +1,7 @@
 ## Markov Captioner
 A Markov Chain that can describe an image based on the extracted features, in this case being the object categories and its location.
 
-By the way, this is my code for the project of [10-701 Introduction to Machine Learning](http://www.cs.cmu.edu/~epxing/Class/10701-20/).
+This is my code for the course project of [10-701 Introduction to Machine Learning](http://www.cs.cmu.edu/~epxing/Class/10701-20/) titled "Markov vs Neural Network: A Comparative Study of Classic and Modern Models for Image Captioning". You can find the project report [here](Image_Captioning__team_4_.pdf).
 
 ### Core Mathematics
 Select the next best word (or sequence of words when beam width is greater than 1) by maximizing the conditional probability of the word's appearance given its previous few words
